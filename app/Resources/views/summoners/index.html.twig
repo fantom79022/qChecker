@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>{{ title }}</h1>
+{% for summonerKey, info in summoners %}
+    <h4>{{ summonerKey }}</h4>
+    {% for key, value in info %}
+        {{ key }} - {{ value }}
+        <br>
+    {% endfor %}
+    ________
+    <br>
+{% endfor %}
+
+{% endblock %}
+
