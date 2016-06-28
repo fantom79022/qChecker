@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "a8c5d3229c1459867987933c0dde7f99",
-    "content-hash": "a82f51a50cf2e2108dae44fe3f9ceb25",
+    "hash": "226729971a27edeed4004353d2cbc672",
+    "content-hash": "3f3ac695b098bf7c973cbc7a2d23d5c8",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -2508,16 +2508,16 @@
         },
         {
             "name": "zendframework/zend-code",
-            "version": "3.0.3",
+            "version": "3.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/zendframework/zend-code.git",
-                "reference": "cdd9d0ff36c09772ca787c9c54318115f65d4fab"
+                "reference": "57cfbcf794a79985278d6308325bc86060af588c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zendframework/zend-code/zipball/cdd9d0ff36c09772ca787c9c54318115f65d4fab",
-                "reference": "cdd9d0ff36c09772ca787c9c54318115f65d4fab",
+                "url": "https://api.github.com/repos/zendframework/zend-code/zipball/57cfbcf794a79985278d6308325bc86060af588c",
+                "reference": "57cfbcf794a79985278d6308325bc86060af588c",
                 "shasum": ""
             },
             "require": {
@@ -2557,7 +2557,7 @@
                 "code",
                 "zf2"
             ],
-            "time": "2016-06-27 22:07:15"
+            "time": "2016-04-20 17:34:49"
         },
         {
             "name": "zendframework/zend-eventmanager",

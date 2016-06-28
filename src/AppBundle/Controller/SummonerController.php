@@ -2,6 +2,7 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\Entity\Summoners;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -32,5 +33,13 @@ class SummonerController extends Controller
             'title' => 'Summoners',
             'summoners' => $summoners,
         ]);
+    }
+    public function getSummonersByName($names, $server) {
+        $name = 'fantonyasha';
+        foreach ($names as $name) {
+            
+        }
+        $summonersEntity = $this->getDoctrine()->getRepository('AppBundle:Summoners');
+        $summonersEntity->findOneBy(array('name' => $name));
     }
 }
