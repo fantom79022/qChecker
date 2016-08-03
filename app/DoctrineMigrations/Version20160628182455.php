@@ -16,12 +16,15 @@ class Version20160628182455 extends AbstractMigration
     public function up(Schema $schema)
     {
         $table = $schema->createTable('summoners');
-        $table->addColumn('id', 'integer')->setNotnull(true);
+        $table->addColumn('id', 'integer')->setNotnull(true)->setAutoincrement(true);
+        $table->addColumn('summoner_id', 'integer')->setNotnull(true);
         $table->addColumn('name', 'string')->setNotnull(true);
-        $table->addColumn('profileIconId', 'integer')->setNotnull(true);
-        $table->addColumn('summonerLevel', 'integer')->setNotnull(true);
-        $table->addColumn('revisionDate', 'bigint')->setNotnull(true);
+        $table->addColumn('profile_icon_id', 'integer')->setNotnull(true);
+        $table->addColumn('summoner_level', 'integer')->setNotnull(true);
+        $table->addColumn('revision_date', 'integer')->setNotnull(true);
+        $table->addColumn('region', 'integer')->setNotnull(true);
         $table->setPrimaryKey(array('id'));
+        $table->addUniqueIndex(array('summoner_id', 'region'));
     }
 
     /**

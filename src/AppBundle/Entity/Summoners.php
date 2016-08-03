@@ -11,30 +11,41 @@ use Doctrine\ORM\Mapping as ORM;
 class Summoners
 {
 /**
-* @ORM\Column(type="integer")
-* @ORM\Id
+ * @ORM\Column(type="integer")
+ * @ORM\GeneratedValue(strategy="AUTO")
+ * @ORM\Id
 */
-private $id;
+public $id;
 
 /**
-* @ORM\Column(type="string", length=100)
+ * @ORM\Column(type="string", length=100)
 */
-private $name;
+public $name;
 
 /**
-* @ORM\Column(type="integer")
+ * @ORM\Column(type="integer")
 */
-private $profileIconId;
+public $profileIconId;
 
 /**
-* @ORM\Column(type="integer")
+ * @ORM\Column(type="integer")
 */
-private $summonerLevel;
+public $summonerLevel;
 
 /**
-* @ORM\Column(type="integer")
+ * @ORM\Column(type="integer")
 */
-private $revisionDate;
+public $revisionDate;
+
+/**
+ * @ORM\Column(type="integer")
+*/
+public $region;
+
+/**
+ * @ORM\Column(type="integer")
+*/
+public $summonerId;
 
     /**
      * Set id
@@ -154,5 +165,53 @@ private $revisionDate;
     public function getRevisionDate()
     {
         return $this->revisionDate;
+    }
+
+    /**
+     * Set region
+     *
+     * @param integer $region
+     *
+     * @return Summoners
+     */
+    public function setRegion($region)
+    {
+        $this->region = $region;
+
+        return $this;
+    }
+
+    /**
+     * Get region
+     *
+     * @return integer
+     */
+    public function getRegion()
+    {
+        return $this->region;
+    }
+
+    /**
+     * Set summonerId
+     *
+     * @param integer $summonerId
+     *
+     * @return Summoners
+     */
+    public function setSummonerId($summonerId)
+    {
+        $this->summonerId = $summonerId;
+
+        return $this;
+    }
+
+    /**
+     * Get summonerId
+     *
+     * @return integer
+     */
+    public function getSummonerId()
+    {
+        return $this->summonerId;
     }
 }

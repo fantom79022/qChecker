@@ -3,7 +3,11 @@
 namespace AppBundle\Controller;
 
 use AppBundle\AppBundle;
+use AppBundle\Checker\Checker;
+use AppBundle\Checker\CheckerAction;
+use AppBundle\Entity\Matches;
 use AppBundle\Entity\Summoners;
+use AppBundle\RiotApi\MatchesApi;
 use AppBundle\RiotApi\SummonersApi;
 use LoLApi\ApiClient;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -11,26 +15,19 @@ use Sensio\Bundle\GeneratorBundle\Model\Bundle;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
-class SummonerController extends Controller
+class QController extends Controller
 {
     /**
-     * @Route("/summonerInfo", name="summoner")
+     * @Route("/q", name="Q Checker")
      */
     public function indexAction(Request $request)
     {
-        $request = Request::createFromGlobals();
-        $name = $request->get('name');
-        $api = new SummonersApi($this->container);
-        $summoners = $api->getSummonersByName(
-            [$name],
-            \LoLApi\ApiClient::REGION_RU
-            );
-
-        return $this->render('summoners/index.html.twig', [
+        $matches = new MatchesApi($this->container);
+        $matches->prepareMatches($matches->getMatchList());
+       
+        return $this->render('q/index.html.twig', [
             'base_dir' => realpath($this->getParameter('kernel.root_dir').'/..'),
-            'title' => 'Summoners',
-            'summoners' => $summoners,
+            'title' => 'Your favorite Q',
         ]);
     }
-
 }
